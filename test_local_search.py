@@ -4,8 +4,8 @@ from small_sparse_graphs import small_sparse_graphs
 from small_dense_graphs import small_dense_graphs
 from medium_sparse_graphs import medium_sparse_graphs
 from medium_dense_graphs import medium_dense_graphs
-# from large_sparse_graphs import large_sparse_graphs
-# from large_dense_graphs import large_dense_graph
+from large_sparse_graphs import large_sparse_graphs
+from large_dense_graphs import large_dense_graphs
 
 print("==========================================================================\n")
 
@@ -37,6 +37,22 @@ for graph in range(len(medium_dense_graphs)):
     t0 = time.time()
     print("TESTING MEDIUM DENSE GRAPH", graph, ":")
     print(minimum_degree_spanning_tree(medium_dense_graphs[graph]))
+    print("Time Taken:", time.time() - t0, "\n")
+
+print("==========================================================================\n")
+
+for graph in range(len(large_sparse_graphs)):
+    t0 = time.time()
+    print("TESTING LARGE SPARSE GRAPH", graph, ":")
+    print(minimum_degree_spanning_tree(large_sparse_graphs[graph]))
+    print("Time Taken:", time.time() - t0, "\n")
+
+print("==========================================================================\n")
+
+for graph in range(len(large_dense_graphs)):
+    t0 = time.time()
+    print("TESTING LARGE DENSE GRAPH", graph, ":")
+    print(minimum_degree_spanning_tree(large_dense_graphs[graph]))
     print("Time Taken:", time.time() - t0, "\n")
 
 print("==========================================================================\n")

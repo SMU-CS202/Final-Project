@@ -17,13 +17,13 @@ for _ in range(10):
 
     for i in range(num_of_edges_to_remove):
         while True:
-            from_node = random.randint(0, 5)
-            to_node = random.randint(0, 5)
+            from_node = random.randint(0, 4)
+            to_node = random.randint(0, 4)
 
             while True:
-                if to_node == from_node or not (from_node in new_sparse_graph and to_node in new_sparse_graph[from_node]):
-                    from_node = random.randint(0, 5)
-                    to_node = random.randint(0, 5)
+                if to_node == from_node or to_node not in new_sparse_graph[from_node]:
+                    from_node = random.randint(0, 4)
+                    to_node = random.randint(0, 4)
                 else:
                     break
 

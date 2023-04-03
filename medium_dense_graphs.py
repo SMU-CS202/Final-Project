@@ -22,13 +22,13 @@ for _ in range(9):
 
     for i in range(num_of_edges_to_remove):
         while True:
-            from_node = random.randint(0, 10)
-            to_node = random.randint(0, 10)
+            from_node = random.randint(0, 9)
+            to_node = random.randint(0, 9)
 
             while True:
-                if to_node == from_node or not (from_node in new_dense_graph and to_node in new_dense_graph[from_node]):
-                    from_node = random.randint(0, 10)
-                    to_node = random.randint(0, 10)
+                if to_node == from_node or to_node not in new_dense_graph[from_node]:
+                    from_node = random.randint(0, 9)
+                    to_node = random.randint(0, 9)
                 else:
                     break
 
