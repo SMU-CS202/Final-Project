@@ -36,21 +36,7 @@ def minimum_degree_spanning_tree(graph):
         u, v, w = sample(candidates, 1)[0]  # randomly choose one candidate
 
         # Update the tree T with the local move
-        u_neigh = set()
-
-        paths = []
-        is_on_path(mst, v, w, u, paths)
-
-        for path in paths:
-            for i in range(len(path)):
-                if path[i] == u:
-                    if i - 1 >= 0:
-                        u_neigh.add(path[i - 1])
-                    if i + 1 < len(path):
-                        u_neigh.add(path[i + 1])
-                continue
-
-        u_ = random.choice(list(u_neigh)) # randomly choose one neighbour of u
+        u_ = choose_u_neigh(mst, v, w, u)
 
         mst[u].remove(u_)
         mst[u_].remove(u)
@@ -113,3 +99,22 @@ def is_on_path(graph, v, w, u, paths):
             return True
 
     return False
+
+def choose_u_neigh(mst, v, w, u):
+    u_neigh = set()
+
+    paths = []
+    is_on_path(mst, v, w, u, paths)
+
+    for path in paths:
+        for i in range(len(path)):
+            if path[i] == u:
+                if i - 1 >= 0:
+                    u_neigh.add(path[i - 1])
+                if i + 1 < len(path):
+                    u_neigh.add(path[i + 1])
+            continue
+
+    u_ = random.choice(list(u_neigh)) # randomly choose one neighbour of u
+
+    return u_
