@@ -9,7 +9,6 @@ def minimum_degree_spanning_tree(graph):
     num_vertex = len(graph)
 
     mst = get_spanning_tree(graph)
-    print(mst)
     
     mst_degree = get_degree(mst)
     print("MST DEGREE BEFORE:", mst_degree)
