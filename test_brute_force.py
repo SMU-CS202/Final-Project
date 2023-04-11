@@ -20,8 +20,8 @@ print("Total Time: ", total_time)
 print("Average Time: ", total_time / len(small_sparse_graphs))
 print("==========================================================================\n")
 
-for graph in range(len(small_dense_graphs)):
 total_time = 0
+for graph in range(len(small_dense_graphs)):
     t0 = time.time()
     print("TESTING SMALL DENSE GRAPH", graph, ":")
     print(minimum_degree_spanning_tree(small_dense_graphs[graph]))
@@ -32,8 +32,8 @@ print("Total Time: ", total_time)
 print("Average Time: ", total_time / len(small_sparse_graphs))
 print("==========================================================================\n")
 
-for graph in range(len(medium_sparse_graphs)):
 total_time = 0
+for graph in range(len(medium_sparse_graphs)):
     t0 = time.time()
     print("TESTING MEDIUM SPARSE GRAPH", graph, ":")
     print(minimum_degree_spanning_tree(medium_sparse_graphs[graph]))
@@ -44,8 +44,8 @@ print("Total Time: ", total_time)
 print("Average Time: ", total_time / len(small_sparse_graphs))
 print("==========================================================================\n")
 
-for graph in range(len(medium_dense_graphs)):
 total_time = 0
+for graph in range(len(medium_dense_graphs)):
     t0 = time.time()
     print("TESTING MEDIUM DENSE GRAPH", graph, ":")
     print(minimum_degree_spanning_tree(medium_dense_graphs[graph]))
@@ -56,8 +56,8 @@ print("Total Time: ", total_time)
 print("Average Time: ", total_time / len(small_sparse_graphs))
 print("==========================================================================\n")
 
-for graph in range(len(large_sparse_graphs)):
 total_time = 0
+for graph in range(len(large_sparse_graphs)):
     t0 = time.time()
     print("TESTING LARGE SPARSE GRAPH", graph, ":")
     print(minimum_degree_spanning_tree(large_sparse_graphs[graph]))
@@ -68,8 +68,8 @@ print("Total Time: ", total_time)
 print("Average Time: ", total_time / len(small_sparse_graphs))
 print("==========================================================================\n")
 
-for graph in range(len(large_dense_graphs)):
 total_time = 0
+for graph in range(len(large_dense_graphs)):
     t0 = time.time()
     print("TESTING LARGE DENSE GRAPH", graph, ":")
     print(minimum_degree_spanning_tree(large_dense_graphs[graph]))
