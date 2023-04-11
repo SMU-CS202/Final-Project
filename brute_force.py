@@ -137,14 +137,6 @@ def get_all_spanning_trees(subgraphs, adj_list):
             spanning_trees.append(subgraph)
     return spanning_trees
 
-graph1 = {
-    0: [1],
-    1: [0, 2, 3],
-    2: [1],
-    3: [1, 4],
-    4: [3]
-}
-
 def minimum_degree_spanning_tree(graph):
     vertices = graph.keys() # get all verticees
     all_valid_subgraphs = generate_subgraphs(graph)
