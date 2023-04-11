@@ -17,7 +17,7 @@ for graph in range(len(small_sparse_graphs)):
     total_time += test_case_runtime
     print("Time Taken: ", test_case_runtime, "\n")
 print("Total Time: ", total_time)
-print("Average Time: ", total_time // len(small_sparse_graphs))
+print("Average Time: ", total_time / len(small_sparse_graphs))
 print("==========================================================================\n")
 
 for graph in range(len(small_dense_graphs)):
@@ -29,7 +29,7 @@ total_time = 0
     total_time += test_case_runtime
     print("Time Taken: ", test_case_runtime, "\n")
 print("Total Time: ", total_time)
-print("Average Time: ", total_time // len(small_sparse_graphs))
+print("Average Time: ", total_time / len(small_sparse_graphs))
 print("==========================================================================\n")
 
 for graph in range(len(medium_sparse_graphs)):
@@ -41,7 +41,7 @@ total_time = 0
     total_time += test_case_runtime
     print("Time Taken: ", test_case_runtime, "\n")
 print("Total Time: ", total_time)
-print("Average Time: ", total_time // len(small_sparse_graphs))
+print("Average Time: ", total_time / len(small_sparse_graphs))
 print("==========================================================================\n")
 
 for graph in range(len(medium_dense_graphs)):
@@ -53,7 +53,7 @@ total_time = 0
     total_time += test_case_runtime
     print("Time Taken: ", test_case_runtime, "\n")
 print("Total Time: ", total_time)
-print("Average Time: ", total_time // len(small_sparse_graphs))
+print("Average Time: ", total_time / len(small_sparse_graphs))
 print("==========================================================================\n")
 
 for graph in range(len(large_sparse_graphs)):
@@ -65,7 +65,7 @@ total_time = 0
     total_time += test_case_runtime
     print("Time Taken: ", test_case_runtime, "\n")
 print("Total Time: ", total_time)
-print("Average Time: ", total_time // len(small_sparse_graphs))
+print("Average Time: ", total_time / len(small_sparse_graphs))
 print("==========================================================================\n")
 
 for graph in range(len(large_dense_graphs)):
@@ -77,5 +77,5 @@ total_time = 0
     total_time += test_case_runtime
     print("Time Taken: ", test_case_runtime, "\n")
 print("Total Time: ", total_time)
-print("Average Time: ", total_time // len(small_sparse_graphs))
+print("Average Time: ", total_time / len(small_sparse_graphs))
 print("==========================================================================\n")
