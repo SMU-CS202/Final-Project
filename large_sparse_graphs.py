@@ -6,7 +6,7 @@ complete_graph = [[i for i in range(15)] for j in range(15)]
 for i in range(15):
     complete_graph[i].remove(i)
 
-large_sparse_graphs = [complete_graph]
+large_sparse_graphs = []
 
 for _ in range(10):
     num_of_edges_to_remove = random.randint(75, 85)
