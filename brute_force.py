@@ -7,14 +7,18 @@ def minimum_degree_spanning_tree(graph):
     vertices = graph.keys() # get all vertices in the graph
     all_valid_subgraphs = generate_subgraphs(graph) # get all valid subgraphs in the graph
     spanning_trees = get_all_spanning_trees(all_valid_subgraphs, graph) # get all subgraphs which are spanning trees
-    mdst = get_smallest_degree(spanning_trees) # get the MDST among all the spanning trees
+    if (len(spanning_trees) == 0):
+        print("THERE ARE NO VALID SPANNING TREES.")
+        return None
+    mdst = get_smallest_degree(spanning_trees, len(vertices)) # get the MDST among all the spanning trees
+    print("MST Degree: ", get_degree(mdst, len(vertices))) 
     return mdst
 
 # Get all valid subgraphs of the graph
 def generate_subgraphs(adj_list):
     powerV = powerset(adj_list.keys()) # generate all possible vertice permutations
     powerE = powerset(get_edges(adj_list)) # generate all possible edge permutations
-    subgraphs = [] # keep a list of all valid subgraphs IE the 
+    subgraphs = [] # keep a list of all valid subgraphs
     for V in powerV: # for every possible combination of vertices
         for E in powerE: # for every possible combination of edges
             accept = True # by default accept the combination
@@ -35,13 +39,13 @@ def get_all_spanning_trees(subgraphs, adj_list):
     return spanning_trees
 
 # Out of all the spanning trees, get the one with the smallest degree
-def get_smallest_degree(subgraphs):
+def get_smallest_degree(subgraphs, num_nodes):
     min_degree = float('inf')
     mdst = ""
     for subgraph in subgraphs:
-        if (get_degree(subgraph) < min_degree):
+        if (get_degree(subgraph, num_nodes) < min_degree and get_degree(subgraph, num_nodes) > 0):
             mdst = subgraph
-            min_degree = get_degree(subgraph)
+            min_degree = get_degree(subgraph, num_nodes)
     return mdst
 
 # *********************************************************************************
@@ -51,13 +55,14 @@ def powerset(iterable): # get all possible combinations of elements in a set
     s = list(iterable)
     return list(chain.from_iterable(combinations(s, r) for r in range(len(s)+1)))
 
-def get_degree(graph): # get the degree of the graph, only for an adjacency list
+def get_degree(graph, num_nodes): # get the degree of the graph, only for an adjacency list
+    adj_list = convert_edgelist_to_adj(graph[1], num_nodes)
     deg = -float('inf')
-    for v in graph:
-        deg = max(deg, len(v))
+    for v in adj_list:
+        deg = max(deg, len(adj_list[v]))
     return deg
 
-def get_edges(adj_list): # get all edges of the graph, only for an adjacency list 
+def get_edges(adj_list): # get all edges of the graph, only for an adjacency list
     edges = []
     for key in adj_list.keys():
         for v in adj_list.get(key):

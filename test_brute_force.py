@@ -10,6 +10,7 @@ from large_dense_graphs import large_dense_graphs
 print("==========================================================================\n")
 total_time = 0
 for graph in range(len(small_sparse_graphs)):
+    print(small_sparse_graphs[graph])
     t0 = time.time()
     print("TESTING SMALL SPARSE GRAPH", graph, ":")
     print(minimum_degree_spanning_tree(small_sparse_graphs[graph]))
