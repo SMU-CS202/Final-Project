@@ -142,4 +142,4 @@ def minimum_degree_spanning_tree(graph):
     all_valid_subgraphs = generate_subgraphs(graph)
     spanning_trees = get_all_spanning_trees(all_valid_subgraphs, graph)
     mdst = get_smallest_degree(spanning_trees)
-    print(mdst)
+    return mdst
